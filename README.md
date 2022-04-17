@@ -114,17 +114,16 @@ description | NVARCHAR(25)
 
 ## Files
 
-![Ansayfa](https://user-images.githubusercontent.com/43720773/114262894-14c8cb80-99eb-11eb-958b-c03af94b6de7.jpg)
+![Ansayfa](https://github.com/EmreCelik15/Pet-Care-System/blob/main/src/main/resources/static/images/Anasayfa.PNG)
 
-![Animal Owner](https://user-images.githubusercontent.com/43720773/114262895-15616200-99eb-11eb-9bdc-2f1ab4c7f1f4.jpg)
+![Animal Owner](https://github.com/EmreCelik15/Pet-Care-System/blob/main/src/main/resources/static/images/Sahippp.PNG)
 
-![Animal](https://user-images.githubusercontent.com/43720773/114262896-15f9f880-99eb-11eb-8453-9e150fb0bf05.jpg)
+![Animal](https://github.com/EmreCelik15/Pet-Care-System/blob/main/src/main/resources/static/images/HayvaList.PNG)
 
-![Animal Adding](https://user-images.githubusercontent.com/43720773/114262897-16928f00-99eb-11eb-8b42-ba5340c8c84d.jpg)
+![Animal Adding](https://github.com/EmreCelik15/Pet-Care-System/blob/main/src/main/resources/static/images/HayvaEkle.PNG)
 
-![Animal Owner Adding](https://user-images.githubusercontent.com/43720773/114262898-172b2580-99eb-11eb-9f06-b3ace4d13e07.jpg)
+![Animal Owner Adding](https://github.com/EmreCelik15/Pet-Care-System/blob/main/src/main/resources/static/images/SahipEkleme.PNG)
 
-![web_api](https://user-images.githubusercontent.com/43720773/114262899-172b2580-99eb-11eb-9707-b7a5492e23d9.jpg)
 
 
 ## License
