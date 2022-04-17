@@ -71,7 +71,7 @@ Uygulamayı çalıştırdıktan sonra tomcatin bilgisayarınızda hangi portta �
 
 
 ## SQL Query
-&nbsp;&nbsp;&nbsp;&nbsp; 📃 [RentACarSQLQuery.sql](https://github.com/EmreCelik15/Pet-Care-System/blob/main/script.sql)
+&nbsp;&nbsp;&nbsp;&nbsp; 📃 [Script.sql](https://github.com/EmreCelik15/Pet-Care-System/blob/main/script.sql)
 
 
 ## Tables in Database
