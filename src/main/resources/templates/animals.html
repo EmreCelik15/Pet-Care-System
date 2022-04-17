@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<div class="container-fluid text-center">
+    <div style="align-content: center"><h2>Hayvan Bilgilerini Yönetim Ekranı</h2></div>
+    <div class="m-2"><a class="h3" th:href="@{/animals/new}" style="color: firebrick">Yeni Hayvan Ekle</a></div>
+    <div class="text-lg-right">
+        <form th:action="@{/denemee}" method="get" style="align-content: flex-start">
+            <input type="text" name="name" th:value="${name}" id="textfield1" style="width: 200px">
+            <button th:type="submit" class="btn btn-info">Ara</button>
+            <button type="submit" class="btn btn-info" onclick="clearField()">Temizle</button>
+        </form>
+    </div>
+    <div>
+        <table class="table table-header table-bordered" style="align-content: center">
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Tür</th>
+                <th>İsim</th>
+                <th>Yaş</th>
+                <th>Sahip Id</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="animal : ${animalList}">
+                <td th:text="${animal.id}">Product ID</td>
+                <td th:text="${animal.species}">Name</td>
+                <td th:text="${animal.name}">Brand</td>
+                <td th:text="${animal.age}">Brand</td>
+                <td th:text="${animal.animalOwner.id}">Brand</td>
+
+                <td>
+                    <a th:href="@{'/animals/update/'+${animal.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/animal/delete/'+${animal.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    function clearField() {
+        document.getElementById("textfield1").value = "";
+    }
+</script>
+</body>
+</html>

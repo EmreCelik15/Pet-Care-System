@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" media="screen" th:href="@{/css/main.css}"/>
+</head>
+<body>
+
+<div class="container-fluid text-center" style="margin-top:200px ">
+    
+    <h1 style="color: darkolivegreen">Veteriner Uygulaması</h1>
+    <a class="h2" th:href="@{/animals}" style="color: ">Hayvanları Yönet</a><br>
+    <a class="h2" th:href="@{/animalowners}">Hayvan Sahiplerini Yönet</a><br>
+
+
+</div>
+
+</body>
+
+</html>

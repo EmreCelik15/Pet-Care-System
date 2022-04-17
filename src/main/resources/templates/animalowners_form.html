@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<div class="container-fluid text-center">
+
+    <div class="col-sm-4 offset-sm-4 text-center"><h2>Hayvan Sahibi Ekle</h2></div>
+    <form th:action="@{/animalowners/add}" method="post" th:object="${animalOwner}">
+        <input type="hidden" th:field="*{id}">
+        <div class="form-row">
+            <div class="col-sm-4 offset-sm-4 text-center">
+                <div class="form-group">
+                    <label class="col-form-label">İsim:</label>
+                    <input type="text" class="form-control" th:field="*{firstName}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Soyisim:</label>
+                    <input type="text" class="form-control" th:field="*{lastName}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">Telefon:</label>
+                    <input type="text" class="form-control" th:field="*{mobilePhone}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label">E-mail:</label>
+                    <input type="text" class="form-control" th:field="*{email}"></input>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-sm" id="userFormButton"
+                            type="submit">
+                        <i class="fa  fa-plus-square"></i>Ekle
+                    </button>
+                    <button class="btn btn-danger btn-sm" id="userFormButton2"
+                            type="button" onclick="cancelForm()">
+                        <i class="fa  fa-plus-square"></i>İptal
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript">
+    function cancelForm() {
+        window.location = "[[@{/animalowners}]]"
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+<div class="container">
+
+
+    <div>
+        <form th:action="@{/deneme}" method="get">
+            <input type="text" name="name"  th:value="${name}" id="textfield1">
+            <button th:type="submit" class="btn btn-info">Ara</button>
+            <button type="submit" class="btn btn-info" onclick="clearField()" >Temizle</button>
+        </form>
+        <table class="table table-header table-bordered" style="align-content: center">
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>İsim</th>
+                <th>Soyisim</th>
+                <th>Telefon</th>
+                <th>E-mail</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="animalOwner : ${animalOwnerList}">
+                <td th:text="${animalOwner.id}">Product ID</td>
+                <td th:text="${animalOwner.firstName}">Name</td>
+                <td th:text="${animalOwner.lastName}">Brand</td>
+                <td th:text="${animalOwner.mobilePhone}">Brand</td>
+                <td th:text="${animalOwner.email}">Brand</td>
+
+                <td>
+                    <a th:href="@{'/animalowners/update/'+${animalOwner.id}}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="@{'/animalowners/delete/'+${animalOwner.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    function clearField() {
+        document.getElementById("textfield1").value = "";
+    }
+</script>
+</body>
+</html>
