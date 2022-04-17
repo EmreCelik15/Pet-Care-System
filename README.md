@@ -109,7 +109,7 @@ description | NVARCHAR(25)
  </table>
 
 ## Output
-### Kısa tanıtım videosunu alttakilinkten indireibilirsiniz.
+### Kısa tanıtım videosunu alttaki linkten indirebilirsiniz.
 - **[Video](https://github.com/EmreCelik15/Pet-Care-System/blob/main/Video_22-04-17_15-52-55.mp4)**
 
 ## Files
