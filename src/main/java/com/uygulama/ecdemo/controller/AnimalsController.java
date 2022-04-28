@@ -30,7 +30,7 @@ public class AnimalsController {
         return "animals";
     }
 
-    @GetMapping("/denemee")
+    @GetMapping("/animals/getbyname")
     public String getByName(@RequestParam(value = "name", required = false) String name, Model model) {
         List<Animal> animalList = this.animalService.getByAll();
         model.addAttribute("name", name);
@@ -69,6 +69,14 @@ public class AnimalsController {
     @GetMapping("/animals/update/{id}")
     public String update(@PathVariable("id") int id, Model model) {
         Optional<Animal> animal = animalService.getById(id);
+        AnimalOwner animalOwner=new AnimalOwner();
+        animalOwner.setId(animal.get().getAnimalOwner().getId());
+        animalOwner.setMobilePhone(animal.get().getAnimalOwner().getMobilePhone());
+        animalOwner.setEmail(animal.get().getAnimalOwner().getEmail());
+        animalOwner.setFirstName(animal.get().getAnimalOwner().getFirstName());
+        animalOwner.setLastName(animal.get().getAnimalOwner().getLastName());
+        animalOwner.setAnimal(animal.get().getAnimalOwner().getAnimal());
+        model.addAttribute("animalowner",animalOwner);
         model.addAttribute("animal", animal);
         return "animals_form";
         //try catch adding;

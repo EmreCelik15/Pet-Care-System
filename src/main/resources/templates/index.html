@@ -9,10 +9,15 @@
 <body>
 
 <div class="container-fluid text-center" style="margin-top:200px ">
-    
-    <h1 style="color: darkolivegreen">Veteriner Uygulaması</h1>
-    <a class="h2" th:href="@{/animals}" style="color: ">Hayvanları Yönet</a><br>
-    <a class="h2" th:href="@{/animalowners}">Hayvan Sahiplerini Yönet</a><br>
+
+    <h2 style="color:whitesmoke; font: bold; background-color: darkred; border: 1px solid darkred;
+  border-radius: 25px;width: 220px; margin-left: 42% ">Veteriner Uygulaması</h2>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 220px; margin-left: 42%"><a th:href="@{/animalowners}" style="color: white;"/>
+        Hayvan Sahiplerini Yönet
+    </button>
+    <button type="submit" class="btn btn-primary btn-block mb-4" style="width: 220px; margin-left: 42%"><a th:href="@{/animals}" style="color: white; "/>
+        Hayvanları Yönet
+    </button>
 
 
 </div>

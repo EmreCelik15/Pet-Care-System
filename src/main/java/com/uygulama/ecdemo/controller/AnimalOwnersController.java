@@ -60,7 +60,7 @@ public class AnimalOwnersController {
     }
 
 
-    @GetMapping("/deneme")
+    @GetMapping("/animalowners/getbyname")
     public String getByName(@RequestParam(value = "name", required = false) String name, Model model) {
         List<AnimalOwner> animalOwnerList = this.animalOwnerService.getByAll();
         model.addAttribute("name", name);

@@ -11,7 +11,7 @@
     <div class="m-2"><a class="h3" th:href="@{/animalowners/new}" style="color: firebrick">Yeni Hayvan Sahibi Ekle</a>
     </div>
     <div class="text-lg-right">
-        <form th:action="@{/deneme}" method="get" style="align-content: flex-start">
+        <form th:action="@{/animalowners/getbyname}" method="get" style="align-content: flex-start">
             <input type="text" name="name"  th:value="${name}" id="textfield1" style="width: 150px">
             <button th:type="submit" class="btn btn-info">Ara</button>
             <button type="submit" class="btn btn-info" onclick="clearField()" >Temizle</button>
