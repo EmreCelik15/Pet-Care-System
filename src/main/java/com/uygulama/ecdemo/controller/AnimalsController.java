@@ -2,6 +2,7 @@ package com.uygulama.ecdemo.controller;
 
 import com.uygulama.ecdemo.entity.Animal;
 import com.uygulama.ecdemo.entity.AnimalOwner;
+import com.uygulama.ecdemo.service.AnimalOwnerService;
 import com.uygulama.ecdemo.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,13 @@ import java.util.Optional;
 public class AnimalsController {
 
     private AnimalService animalService;
+    private AnimalOwnerService animalOwnerService;
 
     @Autowired
-    public AnimalsController(AnimalService animalService) {
+    public AnimalsController(AnimalService animalService, AnimalOwnerService animalOwnerService) {
         super();
         this.animalService = animalService;
+        this.animalOwnerService = animalOwnerService;
     }
 
     @RequestMapping(value = "/animals", method = RequestMethod.GET)
@@ -47,6 +50,7 @@ public class AnimalsController {
 
     @GetMapping("/animals/new")
     public String getAnimal(Model model) {
+        model.addAttribute("animalowners", this.animalOwnerService.getByAll());
         model.addAttribute("animal", new Animal());
         return "animals_form";
     }
@@ -69,16 +73,8 @@ public class AnimalsController {
     @GetMapping("/animals/update/{id}")
     public String update(@PathVariable("id") int id, Model model) {
         Optional<Animal> animal = animalService.getById(id);
-        AnimalOwner animalOwner=new AnimalOwner();
-        animalOwner.setId(animal.get().getAnimalOwner().getId());
-        animalOwner.setMobilePhone(animal.get().getAnimalOwner().getMobilePhone());
-        animalOwner.setEmail(animal.get().getAnimalOwner().getEmail());
-        animalOwner.setFirstName(animal.get().getAnimalOwner().getFirstName());
-        animalOwner.setLastName(animal.get().getAnimalOwner().getLastName());
-        animalOwner.setAnimal(animal.get().getAnimalOwner().getAnimal());
-        model.addAttribute("animalowner",animalOwner);
         model.addAttribute("animal", animal);
-        return "animals_form";
+        return "animals_form_updates";
         //try catch adding;
     }
 }

@@ -30,37 +30,28 @@
                     <label class="col-form-label" style="color: white">Açıklama:</label>
                     <input type="text" class="form-control" th:field="*{description}"></input>
                 </div>
-                <!--                <div class="" style="color: white"><h2>Hayvan Sahibi</h2></div>-->
-                <!--                <div class="form-group">-->
-                <!--&lt;!&ndash;                    <label class="col-form-label" style="color: white">Id:</label>&ndash;&gt;-->
-                <!--                    <input type="hidden"  th:field="*{animalOwner.id}"></input>-->
-                <!--                </div>-->
-                <!--                <div class="form-group">-->
-                <!--                    <label class="col-form-label" style="color: white">İsim:</label>-->
-                <!--                    <input type="text" class="form-control" th:field="*{animalOwner.firstName}"></input>-->
-                <!--                </div>-->
-                <!--                <div class="form-group">-->
-                <!--                    <label class="col-form-label" style="color: white">Soyisim:</label>-->
-                <!--                    <input type="text" class="form-control" th:field="*{animalOwner.lastName}"></input>-->
-                <!--                </div>-->
-                <!--                <div class="form-group">-->
-                <!--                    <label class="col-form-label" style="color: white">Telefon:</label>-->
-                <!--                    <input type="text" class="form-control" th:field="*{animalOwner.mobilePhone}"></input>-->
-                <!--                </div>-->
-                <!--                <div class="form-group">-->
-                <!--                    <label class="col-form-label" style="color: white">Mail:</label>-->
-                <!--                    <input type="text" class="form-control" th:field="*{animalOwner.email}"></input>-->
-                <!--                </div>-->
-                <label class="col-form-label" style="color: white">Hayvan Sahibi:
-                <select th:field="*{animalOwner}" class="form-control">
+                <div class="" style="color: white"><h2>Hayvan Sahibi</h2></div>
+                <div class="form-group">
+                    <!--                    <label class="col-form-label" style="color: white">Id:</label>-->
+                    <input type="hidden" th:field="*{animalOwner.id}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: white">İsim:</label>
+                    <input type="text" class="form-control" th:field="*{animalOwner.firstName}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: white">Soyisim:</label>
+                    <input type="text" class="form-control" th:field="*{animalOwner.lastName}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: white">Telefon:</label>
+                    <input type="text" class="form-control" th:field="*{animalOwner.mobilePhone}"></input>
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" style="color: white">Mail:</label>
+                    <input type="text" class="form-control" th:field="*{animalOwner.email}"></input>
+                </div>
 
-                    <option th:each="animalOwner: ${animalowners}"
-                            th:value="${animalOwner.id}"
-                            th:text="'İsim:'+${animalOwner.firstName}+' '+${animalOwner.lastName}+ ','+'Telefon:'+${animalOwner.mobilePhone}">
-
-                    </option>
-                </select>
-                </label>
                 <div class="form-group">
                     <button class="btn btn-success btn-sm" id="userFormButton"
                             type="submit">

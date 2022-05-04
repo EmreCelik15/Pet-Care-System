@@ -53,8 +53,8 @@ public class AnimalOwnersController {
 
     @GetMapping("/animalowners/update/{id}")
     public String update(@PathVariable("id") int id, Model model) {
-        Optional<AnimalOwner> animal = animalOwnerService.getById(id);
-        model.addAttribute("animalOwner", animal);
+        Optional<AnimalOwner> animalOwner = animalOwnerService.getById(id);
+        model.addAttribute("animalOwner", animalOwner);
         return "animalowners_form";
         //try catch adding;
     }
