@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" media="screen" th:href="@{/css/animalowners.css}"/>
 </head>
 <body>
-<div class="container-fluid text-center">
-    <div style="align-content: center"><h2>Hayvan Sahipleri Bilgilerini Yönetim Ekranı</h2></div>
-    <div class="m-2"><a class="h3" th:href="@{/animalowners/new}" style="color: firebrick">Yeni Hayvan Sahibi Ekle</a>
+<div class="container-fluid text-center" style="border: 0px solid black;width:90%;
+  border-radius: 10px ;background-color: rgba(68, 111, 203, 0.9) ; margin-top: 90px">
+    <div style="align-content: center; color: white"><h2>Hayvan Sahipleri Bilgilerini Yönetim Ekranı</h2></div>
+    <div class="m-2"><a class="h3" th:href="@{/animalowners/new}" style="color: white">Yeni Hayvan Sahibi Ekle</a>
     </div>
     <div class="text-lg-right">
         <form th:action="@{/animalowners/getbyname}" method="get" style="align-content: flex-start">
-            <input type="text" name="name"  th:value="${name}" id="textfield1" style="width: 150px">
+            <input type="text" name="name" th:value="${name}" id="textfield1" style="width: 115px">
             <button th:type="submit" class="btn btn-info">Ara</button>
-            <button type="submit" class="btn btn-info" onclick="clearField()" >Temizle</button>
+            <button type="submit" class="btn btn-info" onclick="clearField()">Temizle</button>
         </form>
     </div>
 
@@ -31,16 +33,16 @@
             </thead>
             <tbody>
             <tr th:each="animalOwner : ${animalOwnerList}">
-                <td th:text="${animalOwner.id}">Product ID</td>
-                <td th:text="${animalOwner.firstName}">Name</td>
-                <td th:text="${animalOwner.lastName}">Brand</td>
-                <td th:text="${animalOwner.mobilePhone}">Brand</td>
-                <td th:text="${animalOwner.email}">Brand</td>
+                <td th:text="${animalOwner.id}" style="color: white">Product ID</td>
+                <td th:text="${animalOwner.firstName}" style="color: white">Name</td>
+                <td th:text="${animalOwner.lastName}" style="color: white">Brand</td>
+                <td th:text="${animalOwner.mobilePhone}" style="color: white">Brand</td>
+                <td th:text="${animalOwner.email}" style="color: white">Brand</td>
 
                 <td>
-                    <a th:href="@{'/animalowners/update/'+${animalOwner.id}}">Edit</a>
+                    <a th:href="@{'/animalowners/update/'+${animalOwner.id}}" style="color:chartreuse">Düzenle</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/animalowners/delete/'+${animalOwner.id}}">Delete</a>
+                    <a th:href="@{'/animalowners/delete/'+${animalOwner.id}}" style="color: red">Sil</a>
                 </td>
             </tr>
             </tbody>

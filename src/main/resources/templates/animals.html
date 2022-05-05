@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link rel="stylesheet" media="screen" th:href="@{/css/animals.css}"/>
 </head>
 <body>
 
-<div class="container-fluid text-center">
-    <div style="align-content: center"><h2>Hayvan Bilgilerini Yönetim Ekranı</h2></div>
-    <div class="m-2"><a class="h3" th:href="@{/animals/new}" style="color: firebrick">Yeni Hayvan Ekle</a></div>
+<div class="container-fluid text-center" style="border: 0px solid black;width:90%;
+  border-radius: 10px ;background-color: rgba(68, 111, 203, 0.9) ; margin-top: 90px">
+    <div style="align-content: center; color: white"><h2>Hayvan Bilgilerini Yönetim Ekranı</h2></div>
+    <div class="m-2"><a class="h3" th:href="@{/animals/new}" style="color: white">Yeni Hayvan Ekle</a></div>
     <div class="text-lg-right">
         <form th:action="@{/animals/getbyname}" method="get" style="align-content: flex-start">
-            <input type="text" name="name" th:value="${name}" id="textfield1" style="width: 200px">
+            <input type="text" name="name" th:value="${name}" id="textfield1" style="width: 155px">
             <button th:type="submit" class="btn btn-info">Ara</button>
             <button type="submit" class="btn btn-info" onclick="clearField()">Temizle</button>
         </form>
     </div>
     <div>
-        <table class="table table-header table-bordered" style="align-content: center">
+        <table class="table table-header table-bordered" style="align-content: center;">
             <thead class="thead-dark">
             <tr>
                 <th>Id</th>
@@ -30,16 +32,16 @@
             </thead>
             <tbody>
             <tr th:each="animal : ${animalList}">
-                <td th:text="${animal.id}">Product ID</td>
-                <td th:text="${animal.species}">Name</td>
-                <td th:text="${animal.name}">Brand</td>
-                <td th:text="${animal.age}">Brand</td>
-                <td th:text="${animal.animalOwner.id}">Brand</td>
+                <td th:text="${animal.id}" style="color: white">Product ID</td>
+                <td th:text="${animal.species}" style="color: white">Name</td>
+                <td th:text="${animal.name}" style="color: white">Brand</td>
+                <td th:text="${animal.age}" style="color: white">Brand</td>
+                <td th:text="${animal.animalOwner.id}" style="color: white">Brand</td>
 
                 <td>
-                    <a th:href="@{'/animals/update/'+${animal.id}}">Edit</a>
+                    <a th:href="@{'/animals/update/'+${animal.id}}" style="color:chartreuse">Düzenle</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a th:href="@{'/animal/delete/'+${animal.id}}">Delete</a>
+                    <a th:href="@{'/animal/delete/'+${animal.id}}" style="color: red">Sil</a>
                 </td>
             </tr>
             </tbody>
